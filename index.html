@@ -1,0 +1,42 @@
+<html>
+
+<head>
+
+  <script type="text/javascript" src="./js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="./js/esa.js"></script>
+
+  <style>
+  #esa {
+    display:none;
+    font-family: serif;
+    height:36px;
+    width:36px;
+    font-size: 36px;
+    opacity:.8;
+  }
+  #esa:after {
+    content:"餌";
+  }
+  </style>
+</head>
+
+<body>
+
+  <!-- This is Esa box -->
+  <div id="esa"></div>
+
+  <script type="text/javascript">
+  $(function(){
+
+    var E = new ESA();
+
+    E.hook('after_move', function(){
+      console.log("moved");
+    });
+
+    E.trap();
+
+  });
+  </script>
+
+</body>
